@@ -1,0 +1,10 @@
+mutation {
+    addBeer(input: { name: "New Beer", style: "Ale", breweryId: "1" }) {
+        id
+        name
+        style
+        brewery {
+            name
+        }
+    }
+}

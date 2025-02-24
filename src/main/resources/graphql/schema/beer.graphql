@@ -1,0 +1,30 @@
+type Query {
+    beers: [Beer!]
+    beer(id: ID!): Beer
+    breweries: [Brewery!]
+    brewery(id: ID!): Brewery
+}
+
+type Mutation {
+    addBeer(input: BeerInput!): Beer
+}
+
+type Beer {
+    id: ID!
+    name: String!
+    style: String!
+    brewery: Brewery!
+}
+
+type Brewery {
+    id: ID!
+    name: String!
+    country: String!
+    beers: [Beer!]
+}
+
+input BeerInput {
+    name: String!
+    style: String!
+    breweryId: ID!
+}

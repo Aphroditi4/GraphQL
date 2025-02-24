@@ -1,0 +1,17 @@
+[
+  {
+    "id": "1",
+    "name": "Brewery A",
+    "location": "Kyiv"
+  },
+  {
+    "id": "2",
+    "name": "Brewery B",
+    "location": "Lviv"
+  },
+  {
+    "id": "3",
+    "name": "Brewery C",
+    "location": "Odesa"
+  }
+]
