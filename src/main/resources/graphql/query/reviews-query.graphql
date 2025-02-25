@@ -1,0 +1,13 @@
+{
+    reviews {
+        id
+        text
+        rating
+        beer {
+            name
+        }
+        user {
+            name
+        }
+    }
+}

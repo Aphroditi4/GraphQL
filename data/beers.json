@@ -1,0 +1,21 @@
+[ {
+  "breweryId" : "1",
+  "name" : "IPA",
+  "style" : "India Pale Ale",
+  "id" : "1"
+}, {
+  "breweryId" : "2",
+  "name" : "Stout",
+  "style" : "Dark Beer",
+  "id" : "2"
+}, {
+  "breweryId" : "3",
+  "name" : "Lager",
+  "style" : "Pale Lager",
+  "id" : "3"
+}, {
+  "breweryId" : "1",
+  "name" : "IPA",
+  "style" : "Ale",
+  "id" : "288aacba-8a8f-44ae-9b1f-373988663143"
+} ]

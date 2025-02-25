@@ -3,10 +3,16 @@ type Query {
     beer(id: ID!): Beer
     breweries: [Brewery!]
     brewery(id: ID!): Brewery
+    reviews: [Review!]
+    review(id: ID!): Review
+    users: [User!]
+    user(id: ID!): User
 }
 
 type Mutation {
     addBeer(input: BeerInput!): Beer
+    addReview(input: ReviewInput!): Review
+    addUser(input: UserInput!): User
 }
 
 type Beer {
@@ -14,6 +20,7 @@ type Beer {
     name: String!
     style: String!
     brewery: Brewery!
+    reviews: [Review!]
 }
 
 type Brewery {
@@ -23,8 +30,35 @@ type Brewery {
     beers: [Beer!]
 }
 
+type Review {
+    id: ID!
+    text: String!
+    rating: Int!
+    beer: Beer!
+    user: User!
+}
+
+type User {
+    id: ID!
+    name: String!
+    email: String!
+    reviews: [Review!]
+}
+
 input BeerInput {
     name: String!
     style: String!
     breweryId: ID!
+}
+
+input ReviewInput {
+    text: String!
+    rating: Int!
+    beerId: ID!
+    userId: ID!
+}
+
+input UserInput {
+    name: String!
+    email: String!
 }

@@ -9,18 +9,33 @@ import java.nio.file.Paths;
 public class FileUtils {
 
     private FileUtils() {
-        throw new UnsupportedOperationException("This class is not supposed to be instantiated");
+        throw new UnsupportedOperationException("Utility class");
     }
 
     public static String readFileContent(String path) {
-        try (InputStream resourceInputStream = FileUtils.class.getResourceAsStream(path)) {
-            if (resourceInputStream == null) {
-                throw new IllegalArgumentException("Resource not found: " + path);
-            } else {
-                return new String(resourceInputStream.readAllBytes(), StandardCharsets.UTF_8);
+        try {
+            if (path.startsWith("/")) {
+                return readFromClasspath(path);
+            }
+
+            try {
+                return readFromClasspath("/" + path);
+            } catch (IllegalArgumentException e) {
+                return new String(Files.readAllBytes(Paths.get(path)), StandardCharsets.UTF_8);
             }
         } catch (IOException e) {
-            throw new RuntimeException("Error occurred while reading file content", e);
+            throw new IllegalArgumentException("Failed to read resource: " + path, e);
+        }
+    }
+
+    private static String readFromClasspath(String resourcePath) {
+        try (InputStream inputStream = FileUtils.class.getResourceAsStream(resourcePath)) {
+            if (inputStream == null) {
+                throw new IllegalArgumentException("Resource not found in classpath: " + resourcePath);
+            }
+            return new String(inputStream.readAllBytes(), StandardCharsets.UTF_8);
+        } catch (IOException e) {
+            throw new IllegalArgumentException("Failed to read classpath resource: " + resourcePath, e);
         }
     }
 }

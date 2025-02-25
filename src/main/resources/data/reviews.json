@@ -1,0 +1,16 @@
+[
+  {
+    "id": "1",
+    "text": "Great beer!",
+    "rating": 5,
+    "beerId": "1",
+    "userId": "1"
+  },
+  {
+    "id": "2",
+    "text": "Not bad, but could be better.",
+    "rating": 3,
+    "beerId": "2",
+    "userId": "2"
+  }
+]

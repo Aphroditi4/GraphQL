@@ -1,5 +1,5 @@
 {
-    beer(id: "1") {
+    beers {
         name
         style
         brewery {

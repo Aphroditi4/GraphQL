@@ -1,0 +1,19 @@
+[ {
+  "beerId" : "1",
+  "rating" : "5",
+  "id" : "1",
+  "text" : "Great beer!",
+  "userId" : "1"
+}, {
+  "beerId" : "2",
+  "rating" : "3",
+  "id" : "2",
+  "text" : "Not bad, but could be better.",
+  "userId" : "2"
+}, {
+  "beerId" : "1",
+  "rating" : "5",
+  "id" : "b74f3629-98ed-474f-898d-d7167c199a24",
+  "text" : "Great beer!",
+  "userId" : "1"
+} ]
